@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMedioCurso.Vistas.MenuPrincipal"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout  BackgroundColor="#B7EFFE">
+        <Label Text="RECETARIO"
+               TextColor="#1E1E1E"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="40"
+               FontAttributes="Bold"
+               Margin="0,100,0,0" />
+        <Frame VerticalOptions="FillAndExpand"
+               Margin="20,100,20,100">
+            <StackLayout VerticalOptions="Center"
+                         Spacing="20">
+                <Image Source="Ceviche_ccexpress.png" />
+                <Label Text="Las mejores recetas del perú para el mundo"
+                       FontSize="15"
+                       TextColor="#1E1E1E" />
+                <Button Text="Iniciar"
+                        TextTransform="None"
+                        BackgroundColor="#FDE080"
+                        TextColor="#1E1E1E"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        x:Name="BtnIniciar"
+                        Clicked="BtnIniciar_Clicked"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

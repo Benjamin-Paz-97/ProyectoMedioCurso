@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMedioCurso.Vistas.PantallaListas"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Background="#E2F6D5"
+                     Grid.ColumnSpan="3"
+                     Margin="20,10,20,10">
+            <Label Text="LISTA DE RECETAS"
+                   TextColor="#1E1E1E"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   />
+        </StackLayout>
+        <Image Source="Comida_ccexpress.png"
+               Background="#E2F6D5"
+               WidthRequest="200"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               Margin="20,0,20,0" />
+        <Button x:Name="BtnVolverMenu"
+                Text="Volver Al Menu"
+                FontSize="12"
+                FontAttributes="Bold"
+                BackgroundColor="#98E80A"
+                TextColor="#1E1E1E"
+                TextTransform="None"
+                Margin="20,0,0,0"
+                Clicked="BtnVolverMenu_Clicked"
+                Grid.Row="2"
+                Grid.Column="0" />
+        <Button x:Name="BtnActualizar"
+                Text="Actualizar lista"
+                FontSize="12"
+                FontAttributes="Bold"
+                BackgroundColor="#98E80A"
+                TextColor="#1E1E1E"
+                TextTransform="None"
+                Margin="10,0,10,0"
+                Grid.Row="2"
+                Grid.Column="1"
+                Clicked="BtnActualizar_Clicked"/>
+        <Button x:Name="BtnAgregarReceta"
+                Text="Agregar Receta"
+                FontSize="12"
+                FontAttributes="Bold"
+                BackgroundColor="#98E80A"
+                TextColor="#1E1E1E"
+                TextTransform="None"
+                Margin="0,0,20,0"
+                Clicked="BtnAgregarReceta_Clicked"
+                Grid.Row="2"
+                Grid.Column="2" />
+        <Frame Background="#E2F6D5"
+               Grid.Row="4"
+               Grid.ColumnSpan="3"
+               Margin="20,0,20,20">
+            <ListView x:Name="listRecetas" ItemSelected="listRecetas_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>                                
+                                <Label Text="{Binding IdReceta}"
+                                       HorizontalOptions="Center"
+                                       FontAttributes="Bold"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       TextColor="#1E1E1E" />
+                                <Label Text="{Binding NombreReceta}"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       Grid.Row="0"
+                                       Grid.Column="1"
+                                       TextColor="#1E1E1E"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+    </Grid>
+</ContentPage>

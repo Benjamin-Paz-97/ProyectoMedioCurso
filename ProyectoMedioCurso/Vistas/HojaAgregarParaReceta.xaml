@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMedioCurso.Vistas.HojaAgregarParaReceta"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout Background="#F7D40B">
+        <Label Text="Registro de Receta Nueva"
+               TextColor="#1E1E1E"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="20"
+               FontAttributes="Bold"
+               Margin="0,10,0,0" />
+        <Entry x:Name="txtIdReceta"
+               Placeholder="IDReceta"
+               TextColor="#1E1E1E"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="20"
+               FontAttributes="Bold"
+               Margin="0,0,200,0"
+               IsVisible="False" />
+        <Entry x:Name="txtNombreReceta"
+               Placeholder="NombreReceta"
+               Background="#A0A0A0"
+               Margin="20,20,20,2"
+               FontAttributes="Bold"
+               FontSize="Body" />
+        <Label Text="Ingredientes"
+               TextColor="#1E1E1E"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="20"
+               FontAttributes="Bold"
+               Margin="0,0,200,0" />
+        <Editor x:Name="txtIngredientes"
+                TextColor="#1E1E1E"
+                Background="#FFFFFF"
+                HeightRequest="200"
+                Margin="20,20,20,2" />
+        <Label Text="Preparación"
+               TextColor="#1E1E1E"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="20"
+               FontAttributes="Bold"
+               Margin="0,0,200,0" />
+        <Editor x:Name="txtPreparacion"
+                TextColor="#1E1E1E"
+                Background="#FFFFFF"
+                HeightRequest="200"
+                Margin="20,20,20,2" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0"
+                         Grid.Column="1"
+                         Margin="0,0,20,0">
+                <Button x:Name="BtnAgregarRecetaParaBD"
+                        Text="Agregar"
+                        TextTransform="None"
+                        Clicked="BtnAgregarRecetaParaBD_Clicked" />
+                <Button x:Name="BtnActualizar"
+                        Text="Actualizar"
+                        TextTransform="None"
+                        Clicked="BtnActualizar_Clicked"
+                        IsVisible="False"/>
+            </StackLayout>
+            <StackLayout Grid.Row="0"
+                         Grid.Column="0"
+                         Margin="20,0,0,0" >
+                <Button x:Name="BtnVolver"
+                        Text="Atras"
+                        TextTransform="None"
+                        Clicked="BtnVolver_Clicked"/>
+            </StackLayout>
+        </Grid>
+        <Button x:Name="BtnEliminar"
+                Text="Eliminar"
+                Margin="50,0,50,0" 
+                Clicked="BtnEliminar_Clicked"
+                IsVisible="False"
+            />
+    </StackLayout>
+</ContentPage>
